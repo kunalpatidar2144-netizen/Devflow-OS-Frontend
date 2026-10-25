@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+@keyframes noteProgress {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(300%);
+  }
+}
+
+.animate-note-progress {
+  animation: noteProgress 8s linear forwards;
+}
+
+/* Optional dark theme for the workspace and Settings page */
+.app-dark body { background-color: #0f172a; color: #e2e8f0; }
+.app-dark .app-settings-shell { background-color: #0f172a !important; }
+.app-dark .app-settings-shell .bg-white { background-color: #1e293b !important; }
+.app-dark .app-settings-shell .bg-slate-50 { background-color: #273449 !important; }
+.app-dark .app-settings-shell .bg-blue-50 { background-color: #172554 !important; }
+.app-dark .app-settings-shell .text-slate-900,
+.app-dark .app-settings-shell .text-slate-800,
+.app-dark .app-settings-shell .text-slate-700 { color: #e2e8f0 !important; }
+.app-dark .app-settings-shell .text-slate-600,
+.app-dark .app-settings-shell .text-slate-500,
+.app-dark .app-settings-shell .text-slate-400 { color: #a8b4c7 !important; }
+.app-dark .app-settings-shell .border-slate-100,
+.app-dark .app-settings-shell .border-slate-200 { border-color: #334155 !important; }
+.app-dark .app-settings-shell input,
+.app-dark .app-settings-shell select { background-color: #0f172a; color: #e2e8f0; border-color: #475569; }
+
+/* Apply the selected dark theme to shared app surfaces as well as Settings. */
+.app-dark .bg-white { background-color: #1e293b !important; }
+.app-dark .bg-slate-100, .app-dark .bg-gray-100 { background-color: #0f172a !important; }
+.app-dark .bg-slate-50, .app-dark .bg-gray-50 { background-color: #273449 !important; }
+.app-dark .text-gray-900, .app-dark .text-gray-800, .app-dark .text-slate-900, .app-dark .text-slate-800 { color: #e2e8f0 !important; }
+.app-dark .text-gray-700, .app-dark .text-gray-600, .app-dark .text-slate-700, .app-dark .text-slate-600, .app-dark .text-slate-500 { color: #b6c2d2 !important; }
+.app-dark .border-gray-100, .app-dark .border-gray-200, .app-dark .border-slate-100, .app-dark .border-slate-200 { border-color: #334155 !important; }
+.app-dark input, .app-dark textarea, .app-dark select { background-color: #0f172a; color: #e2e8f0; border-color: #475569; }
+
+
+/* Dark theme interaction contrast fix for DevFlow OS */
+.app-dark button:focus-visible {
+  outline: 2px solid #818cf8;
+  outline-offset: 2px;
+}
+
+/* Selected light-blue controls should remain readable in dark mode. */
+.app-dark .bg-blue-50 {
+  background-color: #1e3a5f !important;
+  color: #bfdbfe !important;
+}
+
+/* Preserve contrast for common light surfaces in dark mode. */
+.app-dark .bg-white:hover,
+.app-dark .bg-white:focus,
+.app-dark .bg-white:active {
+  background-color: #1e293b !important;
+}
+
+.app-dark .bg-slate-50:hover,
+.app-dark .bg-slate-50:focus,
+.app-dark .bg-slate-50:active {
+  background-color: #273449 !important;
+}
